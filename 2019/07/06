@@ -1,0 +1,317 @@
+//moving line(by mouse pointer)
+/*float x;
+int offset=10;
+void setup(){
+  size(240,120);
+  x=width/2;
+}
+void draw(){
+  background(204);
+  if(mouseX>x){
+	x+=0.5;
+	offset=-10;
+  }
+  if(mouseX<x){
+	x-=0.5;
+	offset=10;
+  }
+  line(x,0,x,height);
+  line(mouseX,mouseY,mouseX+offset,mouseY-10);
+  line(mouseX,mouseY,mouseX+offset,mouseY+10);
+  line(mouseX,mouseY,mouseX+offset*3,mouseY);
+}*/
+
+//bigger circle, smaller circle
+/*int x=120;
+int y=60;
+float radius=12;
+void setup(){
+  size(240,120);
+  ellipseMode(RADIUS);
+}
+void draw(){
+  background(204);
+  float d=dist(mouseX,mouseY,x,y);
+  if(d<radius){
+	radius+=0.07;
+	fill(0);
+  }
+  else if(d>=radius){
+	if(radius>=7)
+	radius-=0.07;
+	fill(255);
+  }
+  if(mousePressed==true)
+  radius=17;
+  ellipse(x,y,radius,radius);
+}*/
+
+//black,white rectangle.
+/*int x=120;
+int y=60;
+int w=77;
+int h=77;
+void setup(){
+  size(240,120);
+}
+void draw(){
+  background(204);
+  if((mouseX>x)&&(mouseX<x+w)&&(mouseY>y)&&(mouseY<y+h)){
+	fill(0);
+  }
+  else{
+	fill(255);
+  }
+  rect(x,y,w,h);
+}*/
+
+//keyPressed
+/*void setup(){
+  size(480,240);
+}
+void draw(){
+  background(204);
+  line(40,40,440,200);
+  if(keyPressed){
+	line(440,40,40,200);
+  }
+}*/
+//text, textAlign.
+/*void setup(){
+  size(240,120);
+  textSize(64);
+  textAlign(CENTER);
+}
+void draw(){
+  background(0);
+  text(key,60,80);
+  text(key,120,100);
+  strokeWeight(5);
+  fill(255);
+  point(60,80);
+  point(120,100);
+}*/
+	
+//N or H or rectangle
+/*void setup(){
+  size(120,120);
+}
+void draw(){
+  background(204);
+  if(keyPressed){
+	if((key=='h')||(key=='H')){
+  	line(30,60,90,60);
+	}
+	else if((key=='n')||(key=='N')){
+  	line(30,20,90,100);
+	}
+	else{
+  	line(30,20,90,20);
+  	line(30,100,90,100);
+	}
+  }
+  line(30,20,30,100);
+  line(90,20,90,100);
+}*/
+ 
+ 
+//rectangle moves to right or left or up or down.
+/*int x=10;
+int y=10;
+void setup(){
+  size(480,120);
+}
+void draw(){
+  background(200);
+  if(keyPressed&&key==CODED){
+	fill(0);
+	if(keyCode==LEFT){
+  	x--;
+	}
+	if(keyCode==RIGHT){
+  	x++;
+	}
+	if(keyCode==UP){
+  	y--;
+	}
+	if(keyCode==DOWN){
+  	y++;
+	}
+  }
+  else{fill(255);}
+  rect(x,y,50,50);
+}*/
+
+//ratio move
+/*void setup(){
+  size(240,120);
+  strokeWeight(12);
+}
+void draw(){
+  background(200);
+  stroke(255,0,0);
+  line(mouseX,0,mouseX,height);
+  stroke(0);
+  float mx=mouseX/1.5+50;
+  line (mx,0,mx,height);
+}*/
+//"(same)
+/*void setup(){
+  size(240,120);
+  strokeWeight(12);
+}
+void draw(){
+  background(200);
+  stroke(102);
+  line(mouseX,0,mouseX,height);
+  stroke(0);
+  float mx=map(mouseX,0,width,60,180);
+  line(mx,0,mx,height);
+}*/
+
+//moving robot
+/*
+int x=60;
+int y=390;
+int bodyHeight=180;
+int neckHeight=40;
+int radius=45;
+float easing=0.04;
+void setup(){
+   size(720,480);
+   ellipseMode(RADIUS);
+}
+void draw(){
+  strokeWeight(2);
+ 
+int targetX=mouseX; 
+x+=(targetX-x)*easing;
+if(mousePressed){
+  neckHeight=16;
+  bodyHeight=90;
+}
+else{
+  neckHeight=70;
+  bodyHeight=160;
+}
+float ny=y-bodyHeight-neckHeight-radius;
+background(0,150,200);
+//neck
+stroke(255);
+line(x+2,y-bodyHeight,x+2,ny);
+line(x+12,y-bodyHeight,x+12,ny);
+line(x+22,y-bodyHeight,x+22,ny);
+//body
+noStroke();
+fill(255,204,0);
+ellipse(x,y-33,33,33);
+fill(0);
+rect(x-45,y-bodyHeight,90,bodyHeight-33);
+fill(255,204,0);
+rect(x-45,y-bodyHeight+7,90,6);
+//antena
+stroke(255);
+line(x+12, ny,x-18,ny-43);
+line(x+12,ny,x+42,ny-99);
+line(x+12,ny,x+78,ny+15);
+//head
+fill(0);
+ellipse(x+12,ny,radius,radius);
+fill(255);
+ellipse(x+24,ny-6,14,14);
+fill(0);
+ellipse(x+24,ny-6,3,3);
+fill(153,204,255);
+ellipse(x,ny-8,5,5);
+ellipse(x+30,ny-26,4,4);
+ellipse(x+41,ny+6,3,3);
+}*/
+
+//translate
+/*void setup(){
+  size(120,120);
+}
+void draw(){
+  background(204);
+  translate(mouseX,mouseY);
+  rect(0,0,30,30);
+  translate(35,10);
+  rect(0,0,15,15);
+}*/
+
+//rotate
+/*void setup(){
+  size(120,120);
+}
+void draw()
+{
+  rotate(mouseX/100.0);
+  rect(40,30,160,20);
+}*/
+
+//spinning rectangle
+/*float angle=0;
+void setup(){
+  size(120,120);
+}
+void draw(){
+  translate(mouseX,mouseY);
+  rotate(angle);
+  rect(-15,-15,30,30);
+  angle+=0.1;
+}
+*/
+
+//관절
+/*float angle=0.0;
+float angleDirection=1;
+float speed=0.005;
+void setup(){
+  size(120,120);
+}
+void draw(){
+  background(200);
+  translate(20,25);
+  rotate(angle);
+  strokeWeight(12);
+  line(0,0,40,0);
+  translate(40,0);
+  rotate(angle*2.0);
+  strokeWeight(6);
+  line(0,0,30,0);
+  translate(30,0);
+  rotate(angle*2.5);
+  strokeWeight(3);
+  line(0,0,20,0);
+ 
+  angle+=speed*angleDirection;
+  if((angle>radians(45))||(angle<0){
+	angleDirection*=-1;
+  }*/
+ 
+  //확대, 확대X
+  /*void setup(){
+	size(120,120);
+	rectMode(CENTER);
+  }
+ 
+  void draw(){
+	translate(mouseX,mouseY);
+	float scalar=mouseX/60.0;
+	scale(scalar);
+	strokeWeight(1.0/scalar);
+	rect(0,0,30,30);
+  }*/
+  //pushMatrix, popMatrix
+void setup(){
+  size(120,120);
+}
+void draw(){
+  pushMatrix();
+  translate(mouseX,mouseY);
+  rect(0,0,30,30);
+  popMatrix();
+  translate(35,10);
+  rect(0,0,15,15);
+}
+
